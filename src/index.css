@@ -21,6 +21,12 @@ main {
   text-align: center;
 }
 
+#welcome { transition: 0.3s ease; }
+#welcome:hover {
+  transform: scale(1.05);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
 header h1 {
   font-size: 3rem;
   margin-top: 20px;
@@ -78,15 +84,6 @@ header img {
   border-radius: 3px;
 }
 
-.back a {
-  color: black;
-  text-decoration: none;
-  font-size: 2rem;
-  border: 1px solid black;
-  padding: 0 5px;
-  border-radius: 50%;
-}
-
 .search-type-container {
   width: 20%;
   margin: 30px auto;
@@ -106,4 +103,37 @@ header img {
 
 .search-type:hover {
   background: #e6e6e6;
+}
+
+.container {
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.back a {
+  color: black;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 0 5px;
+}
+
+.show-me {
+  font-size: 1.4rem;
+  background: #fff;
+  border: 0;
+  padding: 10px;
+  border-radius: 3px;
+  margin-top: 40px;
+  outline-color: green;
+}
+
+.show-me:hover {
+  cursor: pointer;
 }

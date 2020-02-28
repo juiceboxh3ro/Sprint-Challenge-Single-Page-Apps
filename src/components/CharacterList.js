@@ -24,7 +24,7 @@ export default function CharacterList() {
   }
 
   return (
-    <div>
+    <div className="container">
       <section className="back">
         <Link to="/">«</Link>
       </section>

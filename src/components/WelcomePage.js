@@ -8,6 +8,7 @@ export default function WelcomePage() {
         <h1>Welcome to the ultimate fan site!</h1>
         <Link to="/characters">
           <img
+          id="welcome"
           className="main-img"
           src="https://i.pinimg.com/474x/3d/44/40/3d4440f47bb6b4451aec6474fa972087.jpg"
           alt="Floating Head"/>
