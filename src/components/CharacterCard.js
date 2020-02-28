@@ -1,8 +1,10 @@
 import React from "react";
 
+import { TheCharacterCard } from "./styles";
+
 export default function CharacterCard(props) {
   return(
-    <div className="character-card">
+    <TheCharacterCard>
       <img src={props.character.image} alt=""/>
       <h2>{props.character.name}</h2>
       <p>Race: {props.character.species}</p>
@@ -12,6 +14,6 @@ export default function CharacterCard(props) {
       <p>{props.character.location.name}</p>
       <h3>Appears in:</h3>
       <p>{props.character.episode.length} episode(s)</p>
-    </div>
+    </TheCharacterCard>
   );
 }

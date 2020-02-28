@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
 
+import { MyButton, PickleRick } from "./styles";
+
 export default function CharacterList() {
 
   const [data, setData] = useState([]);
@@ -46,10 +48,12 @@ export default function CharacterList() {
       </section>
 
       
-      <div className="search-type-container">
-        <Link className="search-type" to="/characters">Characters</Link><br/>
-        <button className="show-me" onClick={giveMeRick}>🥒</button><br/>
-      </div>
+      <MyButton>
+        <Link className="search-type" to="/characters">Characters</Link>
+      </MyButton><br/>
+      <section className="pickle-holder">
+        <PickleRick onClick={giveMeRick}>🥒</PickleRick><br/>
+      </section>
 
       <section className="character-list">
         {data.map(datum => {

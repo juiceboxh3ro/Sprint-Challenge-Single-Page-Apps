@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
 
+import { MyButton } from './styles';
+
 export default function CharacterList() {
 
   const [data, setData] = useState([]);
@@ -40,9 +42,10 @@ export default function CharacterList() {
           />
         </form>
       </section>
-      <div className="search-type-container">
+      
+      <MyButton>
         <Link className="search-type" to="/filters">Filter</Link>
-      </div>
+      </MyButton>
 
       <section className="character-list">
         {data.map(datum => {
