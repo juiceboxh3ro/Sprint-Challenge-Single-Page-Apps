@@ -1,8 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function CharacterCard(props) {
-  console.log(props);
-
   return(
     <div className="character-card">
       <img src={props.character.image} alt=""/>

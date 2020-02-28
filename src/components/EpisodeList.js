@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import CharacterCard from "./CharacterCard";
+import EpisodeCard from "./EpisodeCard";
 
-export default function CharacterList() {
+export default function EpisodeList() {
 
   const [data, setData] = useState([]);
 
   const [query, setQuery] = useState('');
 
   useEffect(() => {
-    axios.get(`https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/`)
+    axios.get(`https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/episode/`)
     .then(res => {
-      console.log("Successful get request", res.data.results);
-      const characters = res.data.results.filter(character => character.name.toLowerCase().includes(query.toLowerCase()));
-      setData(characters);
+      console.log(res.data.results);
+      const episodes = res.data.results.filter(episode => episode.name.toLowerCase().includes(query.toLowerCase()));
+      setData(episodes);
     })
-    .catch(err => console.log('Something went wrong getting data from the character API', err))
+    .catch(err => console.log('Something went wrong getting data from the episode API', err))
   }, [query]);
 
   const handleChange = e => {
@@ -35,15 +35,14 @@ export default function CharacterList() {
             onChange={handleChange}
             value={query}
             name="name"
-            placeholder="Search by name"
+            placeholder="Search by episode name"
             autoComplete="off"
           />
         </form>
-        <Link to="/filters">Filter</Link>
       </section>
       <section className="character-list">
         {data.map(datum => {
-          return( <CharacterCard key={datum.id} character={datum}/>)
+          return( <EpisodeCard key={datum.id} episode={datum}/>)
         })}
       </section>
     </div>

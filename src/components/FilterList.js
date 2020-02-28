@@ -7,12 +7,12 @@ export default function CharacterList() {
 
   const [data, setData] = useState([]);
 
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState('Rick');
 
   useEffect(() => {
-    axios.get(`https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/`)
+    axios.get(`https://rickandmortyapi.com/api/character/?name=${query}`)
     .then(res => {
-      console.log("Successful get request", res.data.results);
+      console.log("Successful get request", res.data);
       const characters = res.data.results.filter(character => character.name.toLowerCase().includes(query.toLowerCase()));
       setData(characters);
     })
@@ -39,7 +39,7 @@ export default function CharacterList() {
             autoComplete="off"
           />
         </form>
-        <Link to="/filters">Filter</Link>
+        <Link to="/characters">Characters</Link>
       </section>
       <section className="character-list">
         {data.map(datum => {

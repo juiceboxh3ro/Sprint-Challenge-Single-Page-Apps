@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: We can load the entire page, or the parts we want to be in a SPA, when the client/user enters the site. Linking to other components within our SPA will prevent page reloads and provide a smoother/faster experience for the user.
 
 ## Project Set Up
 
