@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: We can load the entire page, or the parts we want to be in a SPA, when the client/user enters the site. Linking to other components within our SPA will prevent page reloads and provide a smoother/faster experience for the user.
 
 ## Project Set Up
 
@@ -70,7 +70,7 @@ _Display Data from a Server API_
 _Add a Router to this application using [React Router](https://reacttraining.com/react-router/web/guides/quick-start)._
 
 - [ ]  Hook up the Welcome page(Home page) and a Characters page with React Router.
-- [ ]  Use a styling or component library for part of or all of your application. (Pick at least 1 of: [s](https://react-bootstrap.github.io/)tyled-components or Reactstrap).
+- [ ]  Use a styling or component library for part of or all of your application. (Pick at least 1 of: [s](https://react-bootstrap.github.io/)styled-components or Reactstrap).
 
 _Add 'Search by Name' feature._
 
@@ -104,14 +104,23 @@ Complete search component to your list views.
 - [ ] https://rickandmortyapi.com/api/episode/ - docs
 
 - [ ]  Wire up the `onSearch(name)` callback prop to support [querying the API](https://rickandmortyapi.com/documentation/#filter-characters). (To search for `rick`, you would request `/api/character/?name=rick`.)
+
 - [ ]  Animate page transition and/or card loading.
+
 - [ ]  Persist search form field(s) by using the custom hook `useLocalStorage`.
+
 - [ ]  Add error handling for all async (axios/AJAX) calls. (Including some styled UI.)
+
 - [ ]  Add a "details view" and route to show more details for each type of record. (Hint: Look into route parameters or nested routes.)
-    - [ ]  Similar to the "details view" now with a UI twist: use a [modal](https://react.semantic-ui.com/modules/modal/#variations-size) component to show item view. (If you can, build [modal with routes](https://codesandbox.io/s/react-router-modal-gallery-classes-example-z98l5).)
+
+ - [ ]  Similar to the "details view" now with a UI twist: use a [modal](https://react.semantic-ui.com/modules/modal/#variations-size) component to show item view. (If you can, build [modal with routes](https://codesandbox.io/s/react-router-modal-gallery-classes-example-z98l5).)
+
 - [ ]  Add [paging support](https://react.semantic-ui.com/addons/pagination/#types-pagination) (next/previous links.)
+
 - [ ]  Refactor to use as few Components as possible - while still readable to a React Dev. (Hint: research these patterns: HoC, render props, FaaC.)
+
 - [ ]  Add additional fields to search form. They are unique for each endpoint. See **[Available parameters**.](https://rickandmortyapi.com/documentation/#filter-characters), etc..
+
 - [ ]  Use the [GraphQL Endpoint](https://rickandmortyapi.com/documentation/#graphql) with multiple search fields.
 
 > 💡Reminder: git commit -am 'Stretch Progress 💪'

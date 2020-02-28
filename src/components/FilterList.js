@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
 
-import { MyButton } from './styles';
+import { MyButton, PickleRick } from "./styles";
 
 export default function CharacterList() {
 
@@ -12,9 +12,9 @@ export default function CharacterList() {
   const [query, setQuery] = useState('');
 
   useEffect(() => {
-    axios.get(`https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/`)
+    axios.get(`https://rickandmortyapi.com/api/character/?name=${query}`)
     .then(res => {
-      console.log("Successful get request", res.data.results);
+      console.log("Successful get request", res.data);
       const characters = res.data.results.filter(character => character.name.toLowerCase().includes(query.toLowerCase()));
       setData(characters);
     })
@@ -25,11 +25,15 @@ export default function CharacterList() {
     setQuery(e.target.value)
   }
 
+  const giveMeRick = e => setQuery('Pickle Rick');
+
   return (
     <div className="container">
       <section className="back">
         <Link to="/">«</Link>
       </section>
+
+
       <section className="search">
         <form>
           <input
@@ -37,15 +41,19 @@ export default function CharacterList() {
             onChange={handleChange}
             value={query}
             name="name"
-            placeholder="Search by name"
+            placeholder="Filter by name"
             autoComplete="off"
           />
         </form>
       </section>
+
       
       <MyButton>
-        <Link className="search-type" to="/filters">Filter</Link>
-      </MyButton>
+        <Link className="search-type" to="/characters">Characters</Link>
+      </MyButton><br/>
+      <section className="pickle-holder">
+        <PickleRick onClick={giveMeRick}>🥒</PickleRick><br/>
+      </section>
 
       <section className="character-list">
         {data.map(datum => {

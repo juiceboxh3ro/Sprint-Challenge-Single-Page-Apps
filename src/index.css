@@ -1,6 +1,8 @@
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
   font-family: sans-serif;
 }
 
@@ -12,28 +14,69 @@ main {
   background: #fff;
   padding: 15px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border-radius: 3px;
 }
 
-.grid-view {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+.welcome-page {
+  text-align: center;
 }
 
-.page-view {
-  min-height: 40vh;
+#welcome { transition: 0.3s ease; }
+#welcome:hover {
+  transform: scale(1.05);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
-
-.grid-view div.card.ui {
-  margin: 1.25rem;
-}
-/*
-.main-img {
-  display: block;
-  border-radius: 100%;
-  margin: 0 auto;
-} */
 
 header h1 {
+  font-size: 3rem;
+  margin-top: 20px;
+}
+
+header img {
+  margin: 50px;
+  width: 30%;
+  border-radius: 3px;
+}
+
+.character-list {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.search {
   text-align: center;
+  margin-top: 30px;
+}
+
+.search input {
+  font-size: 1.6rem;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.container {
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.back a {
+  color: black;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 0 5px;
+}
+
+.pickle-holder {
+  width: 4%;
+  margin: 0 auto;
 }
