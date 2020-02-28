@@ -39,8 +39,11 @@ export default function CharacterList() {
             autoComplete="off"
           />
         </form>
-        <Link to="/filters">Filter</Link>
       </section>
+      <div className="search-type-container">
+        <Link className="search-type" to="/filters">Filter</Link>
+      </div>
+
       <section className="character-list">
         {data.map(datum => {
           return( <CharacterCard key={datum.id} character={datum}/>)
